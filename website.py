@@ -9,15 +9,15 @@ def home():
 
 @app.route("/dashboard")
 def dashboard():
-    return "This will be a homelab dashboard"
+    return render_template("dashboard.html")
 
 @app.route("/resources")
 def resources():
-    return "This page will have some of my github resources" 
+    return render_template("resources.html") 
 
 @app.route("/cml")
 def cml():
-    return "This page will have some information about my CML-server"
+    return render_template("cml.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
