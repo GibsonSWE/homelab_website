@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Dashboard{% endblock %}
 {% block content %}
     <h1>Dashboard</h1>
     <p>This page will have some Grafana metrics</p>
+
+    <iframe src="http://grafana.gibnet.se/d-solo/edqjs4qhep9tsc/network-utilization?orgId=1&refresh=5s&from=1720449872503&to=1720536272503&panelId=1" 
+    width="1000" 
+    height="300" 
+    frameborder="0">
+    </iframe>
+    <iframe src="http://grafana.gibnet.se/d-solo/edqjs4qhep9tsc/network-utilization?orgId=1&refresh=5s&from=1720450186345&to=1720536586345&panelId=2" 
+    width="1000" 
+    height="300" 
+    frameborder="0">
+    </iframe>
+
 {% endblock %}
