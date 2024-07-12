@@ -2,18 +2,27 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-    <h1>Dashboard</h1>
-    <p>This page will have some Grafana metrics</p>
 
-    <iframe src="http://grafana.gibnet.se/d-solo/edqjs4qhep9tsc/network-utilization?orgId=1&refresh=5s&panelId=1"
-    width="1000" 
-    height="300" 
-    frameborder="0">
-    </iframe>
-    <iframe src="http://grafana.gibnet.se/d-solo/edqjs4qhep9tsc/network-utilization?orgId=1&refresh=5s&panelId=2"
-    width="1000" 
-    height="300" 
-    frameborder="0">
-    </iframe>
+    <section>
+        <div class="container-lg bg-body p-3">
+            <div class="row"><h1>Dashboard</h1></div>
+            <div class="row">
+                <h3>WAN Download Utilization</h3>
+                <iframe src="http://grafana.gibnet.se/d-solo/edqjs4qhep9tsc/network-utilization?orgId=1&refresh=5s&panelId=1"
+                width="1000" 
+                height="300" 
+                frameborder="0">
+                </iframe>
+            </div>
+            <div class="row">
+                <h3 class="pt-5">WAN Upload Utilization</h3>
+                <iframe src="http://grafana.gibnet.se/d-solo/edqjs4qhep9tsc/network-utilization?orgId=1&refresh=5s&panelId=2"
+                width="1000" 
+                height="300" 
+                frameborder="0">
+                </iframe>    
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
