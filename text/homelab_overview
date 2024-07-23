@@ -1,0 +1,56 @@
+"
+
+Hardware
+
+I am currently running my home lab on an Asus MiniPC, with an Intel Core i5 13500H and 32GB of DDR5 4800MHz memory.
+
+This MiniPC is running Proxmox as it's hypervisor, which I am deploying all of my virtual machines and containers on.
+
+
+
+Services:
+
+Bind9 DNS-server
+This is my one and only DNS-server at the moment, handling all DNS-request in my network.
+
+
+Nginx Reverseproxy
+The reverse proxy will handle all incoming traffic accessing my webservers, and only expose some of my webservers to the internet.
+For example this website you're looking at right now.
+The reverse proxy also centralizes and manages all of my SSL certs.
+
+
+Graylog logserver
+My log server centralizes all system and application logs from all of my servers in one place. It also provides metrics and 
+search filtering for easier troubleshooting accross my home lab.
+
+
+Grafana metrics server
+On my Grafana server I am visualizing metrics from some of my services and sensors in my homelab
+
+
+Netbox
+My Netbox server is where I document my networks and their IP-address allocation. This is probably a little bit above my needs for a homelab, 
+but Netbox is a very powerful and exciting tool that I felt like I had to try out!
+
+Home Assistant
+This is my central hub for everything Home automation, from here i can control lights, chromecasts, TVs Speakers and much more.
+Aswell as monitor various sensors like temp sensors, door sensors, 
+
+
+Cisco Modeling Labs
+
+Netprobe
+
+
+Desktop environments
+
+Pop!_OS
+
+Kali Linux
+
+Tiny11
+
+
+
+"
