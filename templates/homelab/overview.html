@@ -3,10 +3,85 @@
 {% block title %}Overview{% endblock %}
 {% block content %}
     <section>
-        <div class="container-lg bg-body p-3">
+        <div class="container-lg bg-body px-5 py-3">
             <div class="row"><h1>Overview</h1></div>
-            <div class="row">
-                <p>This page will give a general overview about my homelab</p>
+            <div class="row px-3">
+                <p>
+                    Having a homelab can be both educational and recreational. 
+                    I like to describe my homelab as a miniature enterprise IT environment, <br>
+                    with many of the major components of a real enterprise infrastructure, but in a much smaller scale.
+                </p>
+            </div>
+
+
+            <div class="row pt-3"><h3>Hardware</h3></div>
+            <div class="row px-3">
+                <p>
+                    My entire homelab currently runs on an Asus MiniPC.<br> 
+                    This is the perfect form factor for a homeserver in my opinion, if you are living in an apartment or have limited space. <br>
+                    The server is also very quiet and is almost unnoticable unless I am running some CPU intensive tasks, which usually only happens for a limited time every now and then.
+                </p>
+            </div>
+            <div class="row p-5 justify-content-center">
+                <div class="col fs-4">
+                    <ul>
+                        <li><b>CPU:</b> Intel Core i5 13500H (12 Cores, 16 Threads)</li>
+                        <li><b>Memory:</b> 32GB 4.8GHz DDR5</li>
+                        <li><b>Storage:</b> 2TB Kingston NV2 M.2 NVMe Gen 4</li>
+                        <li><b>Ethernet:</b> 1st 2.5Gb/s</li>
+                        <li><b>Wi-Fi:</b> Intel 802.11 AX</li>
+                        <li><b>Bluetooth:</b> Bluetooth 5</li>
+                        <li><b>Dimensions (WxHxD):</b> 120x58x130mm</li>
+                    </ul>
+                </div>
+                <div class="col text-center"><img src="{{ url_for('static', filename='images/asus_minipc.png')}}"
+                    style="width: 70%; height: auto;">
+                </div>
+            </div>
+
+
+            <div class="row"><h3>OS/Hypervisor</h3></div>
+            <div class="row px-3">
+                <p>
+                    The server is running Proxmox VE in a single node cluster. Proxmox is where I provision and manage all of my servers and their resources.
+                    Proxmox is also responsible for scheduled automatic backups of all of my servers, network firewalling, virtual network segmentation with VLAN tagging and interface configurations.
+                    For my servers running in Proxmox, I use a combination of virtual machines and containerization with LXC containers.
+                </p>
+            </div>
+
+
+            <div class="row pt-3"><h3>Network</h3></div>
+            <div class="row px-3">
+                <p>
+                    My network so far is fairly simple. The physical topology consists of your typical home network with a single subnet.
+                    Inside the hypervisor network I am running OpenVSwitch and have segmented the network into several VLANs. 
+                    Most of my servers have separate interfaces for management traffic and user traffic.
+                    My webservers are placed behind a reverseproxy that the user web traffic has to pass through.
+                </p>
+            </div>
+
+
+            <div class="row pt-3"><h3>Components</h3></div>
+            <div class="row px-3">
+                <p>
+                    These are the services currently running in my homelab.
+                    You can read more about them in the components section.<br>
+                    I also have a few VMs running various versions of Linux and Windows for experimental purposes.
+                </p>
+            </div>
+            <div class="col fs-5 px-5">
+                <ul>
+                    <li>Pop!_OS Management VM</li>
+                    <li>Bind9 DNS-server</li>
+                    <li>NGINX Reverseproxy</li>
+                    <li>Grafana Metrics server</li>
+                    <li>Graylog Logging server</li>
+                    <li>Netbox IP-address management server</li>
+                    <li>Netprobe Internet quality monitoring tool</li>
+                    <li>Home Assistant home automation platform</li>
+                    <li>Cisco Modeling Labs Networking lab</li>
+                    <li>Gibnet.se website webserver</li>
+                </ul>
             </div>
         </div>
     </section>
