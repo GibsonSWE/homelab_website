@@ -3,11 +3,39 @@
 {% block title %}Components{% endblock %}
 {% block content %}
     <section>
-        <div class="container-lg bg-body p-3">
+        <div class="container-lg bg-body px-5 p-3">
             <div class="row"><h1>Components</h1></div>
-            <div class="row">
+            <div class="row px-3">
                 <p>This page will display the different services and components I am running in my homelab</p>
             </div>
+
+            <div class="row pt-3"><h3>Management VM</h3></div>
+            <div class="row px-3">
+                <p>
+                    My management environment is a Linux VM running Pop!_OS, which is my favorite desktop Linux distribution due to it's COSMIC desktop.
+                    Pop!_OS is based on the Ubuntu distribution, but has it's own unique desktop environment.<br>
+                    Read more here: <a href="https://pop.system76.com" target="_blank">pop.system76.com</a>
+                </p>
+            </div>
+            <div class="row px-3"><h5>Bastion server</h5></div>
+            <div class="row px-3">
+                <p>
+                    The management VM acts as a jump-box or bastion server that I have to connect to first, in order to reach my other servers over SSH.
+                    Firewall rules and SSHD configurations prevents any other SSH connections to my backend servers.
+                    This limits attack vectors substantially and keeps management traffic organised.
+                </p>
+            </div>
+
+            <div class="row px-3"><h5>Ansible and automation</h5></div>
+            <div class="row px-3">
+                <p>
+                    The management VM is also where I can develop and manage automations for my homelab. 
+                    When I create a new linux server, I run a bootstrap script using Ansible which takes care of the initial standard configuration that I want on all of my servers.
+                    I also have Ansible scripts for automatic distribution updates accross all my servers. This is an area I want to keep exploring and creating scripts that will help me with speed up boring and repetitive tasks.
+                </p>
+            </div>
+
+            <div class="row pt-3"><h3>DNS-server</h3></div>
         </div>
     </section>
 {% endblock %}
